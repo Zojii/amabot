@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  amabot-postgresql:
+    image: postgres:14.1
+    # volumes:
+    #   - ~/volumes/jhipster/amabot/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=amabot
+      - POSTGRES_PASSWORD=amabot
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports:
+      - 127.0.0.1:5432:5432
+
+  amabot-adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

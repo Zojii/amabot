@@ -1,0 +1,12 @@
+server:
+  port: 8075
+
+logging:
+  level:
+    ROOT: INFO
+    org.hibernate.SQL: INFO
+    us.rise8.amabot: INFO
+
+spring:
+  profiles:
+    active: ${PROFILE:dev}
